@@ -8,25 +8,26 @@ import org.testng.annotations.Test;
 import TestComponent.Helper;
 import TestLibs.BrowserSetup;
 
-public class Test1 {
+public class SwagLabs {
     WebDriver driver;
     BrowserSetup browserSetup;
     Helper classHelper;
 
+    @BeforeTest
+    public void setupBrowser() {
+        browserSetup = new BrowserSetup();
+        driver = browserSetup.BrowserStart("saucedemo");
+        classHelper = new Helper(driver);
+    }
+
     @Test
     public void Tests() {
         classHelper.VerifyHome_Page();
+        classHelper.Login();
     }
 
     @AfterTest
     public void Close() {
         browserSetup.closeBrowser();
     }
-
-@BeforeTest
-public void setupBrowser() {
-    browserSetup = new BrowserSetup();
-    driver = browserSetup.BrowserStart("saucedemo");
-    Helper  classHelper = new Helper(driver);
-}
 }

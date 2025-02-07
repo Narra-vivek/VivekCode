@@ -30,9 +30,10 @@
 </dependency>
 
 
+  
   	<dependency>
-  		<groupId>GOLD</groupId>
-  		<artifactId>GOLD</artifactId>
+  		<groupId>Selenium</groupId>
+  		<artifactId>Selenium</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>
